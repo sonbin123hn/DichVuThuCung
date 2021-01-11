@@ -1,0 +1,162 @@
+/* reset css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100px;
+}
+
+/* header */
+.header_top{
+    /* background: #fafafa; */
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 2px 10px 0 rgba(84, 110, 122, 0.09);
+    padding: 29px 0;
+}
+.header_border_left{
+    border-left: 1px solid #607d8b;
+    height: 54px;
+}
+/* header */
+ 
+/* content */
+
+.form_login{
+    border-radius: 4px;
+    padding:70px 60px 20px 60px;
+}
+.main_img{
+    margin: auto;
+}
+.login_group_email,.login_group_pw{
+    position: relative;
+}
+input[type=email],input[type=password]{
+    width: auto;
+    height: 56px;
+    margin-top: 30px;
+    border-radius: 4px;
+    padding-left: 15px;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #263238;
+    border: solid 1px #546e7a;
+}
+input[type=email]:focus,input[type=password]:focus{
+    outline: none;
+    border: 2px solid #5850ec;
+}
+
+.subtitle{
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.4px;  
+    color: #263238;
+    background-color: #ffffff;
+}
+.login_group_email p{
+    position: absolute;
+    width: 77px;
+    height: 20px;
+    top:24px;
+    left: 10px;
+    text-align: center;
+    z-index: 1;  
+}
+.login_group_pw p{
+    position: absolute;
+    height: 20px;
+    background-color: #ffffff;
+    padding: 0 5px;
+    z-index: 1;
+    top: 23px;
+    left: 10px;
+}
+.login_check{
+    margin-top: 40px;
+    display: flex;
+}
+
+.login_check input{
+    width: 29px;
+    height: 28px;
+    border-radius: 5px; 
+}
+.check_title{
+    margin-left: 10px;
+    padding-top: 2px;
+}
+.btn_login{
+    width: 164px;
+    height: 42px;
+    background-color: #5850ec;
+    border-radius: 4px;
+    border: none;
+    font-family: Roboto sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+
+    /* margin-left: 200px; */
+}
+.btn_custom{
+    margin-top: 45px;
+}
+.btn_login:hover{
+    background: #ffffff;
+    color:#63cdda;
+    border: 2px solid #63cdda;
+
+}
+.slider-bg{
+    background:#63cdda;
+}
+.item{
+    height: 170px;
+    margin-left: 30px;
+}
+/* responsive */
+/* mobile */
+@media(max-width:576px) and (max-width:1024px){
+    .main_img{
+        padding: 0;
+    }
+    .header_border_left{
+        display: none;
+    }
+    input[type=email],input[type=password]{
+        width: 100%;
+    }
+}
+@media(min-width:768px){
+    input[type=email],input[type=password]{
+        width: 100%;
+    }
+    .slick-prev{
+        margin-left: 10px;
+    }
+    .slick-next{
+        margin-right: 10px; 
+    }
+}
+
+
+
+
+
