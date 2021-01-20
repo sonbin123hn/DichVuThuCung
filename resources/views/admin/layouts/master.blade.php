@@ -9,12 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/assets/images/favicon.png')}}">
-    <title>Nice admin Template - The Ultimate Multipurpose admin template</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/cotton/64/0000000/cat--v4.png">
+    <title>Boo's Home - Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom CSS -->
     <link href="{{ asset('admin/assets/libs/chartist/dist/chartist.min.css')}}" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <!-- Custom CSS -->
     <link href="{{ asset('admin/dist/css/style.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    @yield('script')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -89,7 +94,6 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{ asset('admin/assets/libs/jquery/dist/jquery.min.js')}}"></script>
     
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('admin/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
@@ -107,19 +111,9 @@
     <script src="{{ asset('admin/assets/libs/chartist/dist/chartist.min.js')}}"></script>
     <script src="{{ asset('admin/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
     <script src="{{ asset('admin/dist/js/pages/dashboards/dashboard1.js')}}"></script>
+    <script src="{{ asset('admin/js/receipt.js')}}"></script>
+   
     <!-- cked -->
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script> 
-        CKEDITOR.replace( 'demockeditor', {
-        filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
-        filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
-        filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
-        filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
-        filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
-        filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
-    } );
-    </script>
-    
 
 </body>
 

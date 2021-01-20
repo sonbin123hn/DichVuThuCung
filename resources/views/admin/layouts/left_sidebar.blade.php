@@ -23,9 +23,9 @@
                             </a>
                         </li>
                          <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="form-basic.html" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/admin/receipts')}}" aria-expanded="false">
                                 <i class="mdi mdi-arrange-bring-forward"></i>
-                                <span class="hide-menu">Form Basic</span>
+                                <span class="hide-menu">Receipt</span>
                             </a>
                         </li>
                         <li class="sidebar-item">

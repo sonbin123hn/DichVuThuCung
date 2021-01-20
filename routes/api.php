@@ -22,11 +22,14 @@ $publicRoutes = function () {
     Route::group(['prefix' => 'v1'], function () {
         Route::post('/auth/login',   'App\Http\Controllers\api\v1\AuthController@authenticate');
         Route::get('/auth/logout',   'App\Http\Controllers\api\v1\AuthController@logout');
-        Route::get('/auth/register',   'App\Http\Controllers\api\v1\AuthController@register');
+        Route::post('/auth/register',   'App\Http\Controllers\api\v1\AuthController@register');
+        Route::group(['prefix' => 'service'], function () {
+            Route::post('/add', 'App\Http\Controllers\api\v1\ServiceController@store');
+        });
     });
 };
 
 Route::middleware([])->group($publicRoutes);
 Route::group(['prefix' => 'v1','middleware' => 'auth:api'],function(){
-
+   
 });

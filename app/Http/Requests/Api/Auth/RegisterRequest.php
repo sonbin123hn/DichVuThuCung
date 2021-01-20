@@ -25,29 +25,30 @@ class RegisterRequest extends ApiRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
+            'phone' => 'required|numeric|min:10',
+            'name' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|min:8|max:15|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
-            'password_confirmation' => 'required',
+            'password' => 'required|min:8|max:15',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Tên đầy đủ là trường bắt buộc', 
+            'name.required' => 'Tên là trường bắt buộc', 
+            'phone.required' => 'Số điện thoại là trường bắt buộc', 
+            'phone.numeric' => 'Nhập sai định dạng', 
+            'phone.min' => 'Số điện thoại có ít nhất 10 số', 
             'email.required' => 'Email là trường bắt buộc', 
             'email.unique' => 'Email đã tồn tại trong hệ thống',
             'email.email' => 'Email không đúng định dạng',
             'password.required' => 'Mật khẩu là trường bắt buộc', 
-            'password.confirmed' =>'Mật khẩu xác nhận không khớp với mật khẩu đã nhập',
-            'password_confirmation.required' => 'Mật khẩu xác nhận là trường bắt buộc',
         ];
     }
 
     public function getData()
     {
-        $data = $this->only(['name', 'email', 'password']);
+        $data = $this->only(['name','phone', 'email', 'password']);
         return $data;
     }
 }

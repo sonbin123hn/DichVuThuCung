@@ -9,14 +9,14 @@
                     <!-- Logo -->
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
-                        <a href="index.html" class="logo">
+                        <a href="{{url('/admin/dashboard')}}" class="logo">
                             <!-- Logo icon -->
                             <b class="logo-icon">
                                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                                 <!-- Dark Logo icon -->
                                 <img src="{{ asset('admin/assets/images/logo-icon.png')}}" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="{{ asset('admin/assets/images/logo-light-icon.png')}}" alt="homepage" class="light-logo" />
+                                <img src="https://img.icons8.com/cotton/64/0000000/cat--v4.png" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->

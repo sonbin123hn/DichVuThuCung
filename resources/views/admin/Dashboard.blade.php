@@ -320,6 +320,6 @@
 @section('footer')
 <footer class="footer text-center">
     All Rights Reserved by Nice admin. Designed and Developed by
-    <a href="https://wrappixel.com">WrapPixel</a>.
+    <a href="https://www.facebook.com/sonbin1999/">Mai La AE Team</a>.
 </footer>
 @endsection

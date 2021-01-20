@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-
+Route::get('/', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('admin.login');
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'App\Http\Controllers\Auth'
@@ -32,8 +32,21 @@ Route::group([
 ], function () {
     //Dashboard
     Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
-
+    //profile
     Route::get('/user/profile','UserController@edit')->name('admin.profile');
     Route::post('/user/profile','UserController@update')->name('admin.profile');
+    //service
+    Route::get('/service','ServiceController@index')->name('admin.service');
+    Route::get('/service/add','ServiceController@create')->name('admin.create');
+    Route::post('/service/add','ServiceController@store')->name('admin.store');
+    Route::delete('/service/remove','ServiceController@destroy')->name('admin.service.remove');
+    Route::get('/service/edit/{id}','ServiceController@edit')->name('admin.service.edit');
+    Route::post('/service/edit/{id}','ServiceController@update')->name('admin.service.update');
+    //receipts
+    Route::get('/receipts','ReceiptsController@index')->name('admin.receipts');
+    //ajax receipts
+    Route::post('/ajax_date','ReceiptsController@date');
+    Route::get('/ajax_everyday','ReceiptsController@everyday');
+    Route::get('/ajax_month','ReceiptsController@topmonth');
 
 });
