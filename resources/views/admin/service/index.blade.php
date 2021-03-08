@@ -59,10 +59,13 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        You are on page {{$service->currentPage()}}
+                        <a style="font-size: 20px;margin-right: 20px;" href="{{$service->previousPageUrl()}}" id="previousPagebtn"><</a>
+                        <a style="font-size: 20px;" href="{{$service->nextPageUrl()}}" id="nextPagebtn">></a>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <button class="btn btn-success"><a href="{{ url('/admin/service/add')}}">Add service</a></button>
+                            <button class="btn btn-success"><a style="color: white;" href="{{ url('/admin/service/add')}}">Add service</a></button>
                         </div>
                     </div>
             </div>
