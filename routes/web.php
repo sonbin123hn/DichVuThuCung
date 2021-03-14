@@ -39,7 +39,7 @@ Route::group([
     Route::get('/service','ServiceController@index')->name('admin.service');
     Route::get('/service/add','ServiceController@create')->name('admin.create');
     Route::post('/service/add','ServiceController@store')->name('admin.store');
-    Route::delete('/service/remove','ServiceController@destroy')->name('admin.service.remove');
+    Route::get('/service/remove/{id}','ServiceController@delete')->name('admin.service.remove');
     Route::get('/service/edit/{id}','ServiceController@edit')->name('admin.service.edit');
     Route::post('/service/edit/{id}','ServiceController@update')->name('admin.service.update');
     //receipts
@@ -48,5 +48,7 @@ Route::group([
     Route::post('/ajax_date','ReceiptsController@date');
     Route::get('/ajax_everyday','ReceiptsController@everyday');
     Route::get('/ajax_month','ReceiptsController@topmonth');
+    Route::get('/ajax_day','ReceiptsController@topday');
+    Route::get('/ajax_year','ReceiptsController@topyear');
 
 });

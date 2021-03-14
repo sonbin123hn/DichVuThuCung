@@ -96,6 +96,7 @@
                 </div>
             </div>
         </form>
+        <h2 id="ketqua" style="display: none;"></h2>
 
     </div>
 </div>
@@ -122,27 +123,41 @@
 <script>
 $(document).ready(function() {
     $('form').submit(function(){
-        var day = $('#day').val();
-        var month = $('#month').val();
-        var year = $('#year').val();
-        $.ajaxSetup({
+        // var day = $('#day').val();
+        // var month = $('#month').val();
+        // var year = $('#year').val();
+        let flag = true
+        let day = document.forms['formTextbox'].day.value
+        let month = document.forms['formTextbox'].month.value
+        let year = document.forms['formTextbox'].year.value
+        if (day.toString().length < 0 || day > 31 || day.toString().length > 2)
+            flag = false
+        if (month.toString().length < 0 || month > 13 || month.toString().length > 2)
+            flag = false
+        if (year.toString().length <= 0 || year > new Date().getFullYear().toString() || year.toString().length > 4)
+            flag = false
+        if(flag){
+            $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        });
-        $.ajax({
-            method: "POST",
-            url: '/admin/ajax_date',
-            data:{
-                "_token": "{{ csrf_token() }}",
-                day: day,
-                month: month,
-                year: year
-            },
-            success: function(data) {
-                alert(data);
-            }
-        })
+            });
+            $.ajax({
+                method: "POST",
+                url: '/admin/ajax_date',
+                data:{
+                    "_token": "{{ csrf_token() }}",
+                    day: day,
+                    month: month,
+                    year: year
+                },
+                success: function(data) {
+                    $('#ketqua').text("Total sales in :"+day+"-"+month+"-"+year+" : is : "+data).show();
+                }
+            })
+        }else{
+            alert("");
+        }
     })
     $('.form-check-input').click(function(){
         $check = $(this).val();
@@ -156,7 +171,7 @@ $(document).ready(function() {
                 method: "GET",
                 url: '/admin/ajax_everyday',
                 success: function(data) {
-                    alert(data);
+                    $('#ketqua').text("Total sales of Boo's Home is : "+data).show();
                 }
             })
         }
@@ -168,9 +183,37 @@ $(document).ready(function() {
             });
             $.ajax({
                 method: "GET",
-                url: '/admin/ajax_topmonth',
+                url: '/admin/ajax_month',
                 success: function(data) {
-                    alert(data);
+                    $('#ketqua').text(data).show();
+                }
+            })
+        }
+        if($check == 3){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                method: "GET",
+                url: '/admin/ajax_day',
+                success: function(data) {
+                    $('#ketqua').text(data).show();
+                }
+            })
+        }
+        if($check == 4){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                method: "GET",
+                url: '/admin/ajax_year',
+                success: function(data) {
+                    $('#ketqua').text(data).show();
                 }
             })
         }

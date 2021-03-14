@@ -10,4 +10,7 @@ getValue = (e) => {
         flag = false
     if (year.toString().length <= 0 || year > new Date().getFullYear().toString() || year.toString().length > 4)
         flag = false
+    if(flag){
+        console.log(day,month,year)
+    }
 }

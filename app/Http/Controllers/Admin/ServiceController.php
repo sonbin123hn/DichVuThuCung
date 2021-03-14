@@ -16,7 +16,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $service = Service::all();
+        $service = Service::paginate(3);
         return view('admin.service.index')->with(compact('service'));
     }
 
@@ -91,8 +91,10 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
+    }
+    public function delete($id){
         $service = Service::findOrFail($id);
         if($service->delete()){
             // redirect chuyen huong!
